@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<main class="container">
+    <div class="row">
+        <aside class="col-12 col-md-6" id = "header-text">
+            <h2>Welcome back to the Fight!</h2>
+            {% include 'form.html' %}
+        </aside>
+        <aside class="col-12 col-md-6" id = "header-image">
+            <img src="../../static/images/justice_league.jpg" alt="Justice League" class="signin-img">
+        </aside>
+    </div>
+</main>
+
+
+{% endblock content %}

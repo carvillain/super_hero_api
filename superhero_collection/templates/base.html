@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/css/main.css">
+<title>Supers API</title>
+</head>
+<body>
+
+        <!--NavBar Here-->
+        <nav class="ct-nav">
+            <div>
+                <img src="../static/images/super_logo.jpg" alt="Coding Drones Logo">
+            </div>
+      
+            <!--Nav Items-->
+            <div>
+                <ul id="horizontal-list">
+                    <a href="{{ url_for('site.home') }}">
+                        <li>The Supers Project</li>
+                    </a>
+
+                    {% if current_user.is_authenticated %}
+
+                    <a href="{{ url_for('site.profile') }}">
+                        <li>Profile</li>
+                    </a>
+                    
+                    <a href="{{ url_for('auth.logout') }}">
+                        <li>Log Out</li>
+                    </a>
+
+                    {% else %}
+                    
+                    <a href="{{ url_for('auth.signin') }}">
+                        <li>Sign In</li>
+                    </a>
+                    <a href="{{ url_for('auth.signup') }}">
+                        <li>Sign Up</li>
+                    </a>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav>
+        <!--End of Nav-->
+
+        {% block content %}
+        {% endblock content %}
+
+        <!-- Start of Footer -->
+        <footer class="row" id="footer">
+            <div class="col-12 col-md-3">
+                <img src="../../static/images/The_Marvel_Universe.png" alt="The Marvel Universe" id="footer-logo">
+            </div>
+            <div class="col-12 col-md-3">
+                <h4>The Fight</h4>
+                <p>The Supers</p>
+                <p>The Members</p>
+                <p>The Inner Sanctum</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h4>Resources</h4>
+                <p>Our Slack</p>
+                <p>Our Discord</p>
+                <p>Our Instagram</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h4>Contact Info</h4>
+                <p>Email</p>
+                <p>Phone</p>
+                <p>Help</p>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
