@@ -1,4 +1,4 @@
-from flask import Blueprint, json, request, jsonify
+from flask import Blueprint, request, jsonify
 from superhero_collection.helpers import token_required
 from superhero_collection.models import Super, db, User, super_schema, supers_schema
 
